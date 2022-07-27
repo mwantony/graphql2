@@ -19,7 +19,7 @@ const userResolvers = {
     parseLiteral: (ast) => new Date(ast.value)
   }),
   Query: {
-    users: (root, args, { dataSources }) => dataSources.usersAPI.getUsers(),
+    users: (root, args, { dataSources }) => dataSources.usersAPI.getUsers(args),
     user: (root, { id }, { dataSources }) => dataSources.usersAPI.getUserById(id)
   },
   Mutation: {
@@ -32,7 +32,7 @@ const userResolvers = {
     mudaEstadoUser: async (root, {id}, {dataSources}) => dataSources.usersAPI.mudaEstadoUser(id)
   },
   User: {
-    matriculas: (parent, args, {dataSources}) => dataSources.matriculasAPI.matriculasLoader.load(parent.id)
+    matriculas: (parent, args, {dataSources}) => dataSources.matriculasAPI.getMatriculasPorEstudante.load(parent.id)
   }
 }
 

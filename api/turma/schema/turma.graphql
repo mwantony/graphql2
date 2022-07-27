@@ -16,7 +16,7 @@ const turmaSchema = gql `
   }
 
   type Query {
-    turmas: [Turma]!
+    turmas(page: Int, pageOffset: Int): [Turma]!
     turma (id: ID!): Turma!
   }
 
