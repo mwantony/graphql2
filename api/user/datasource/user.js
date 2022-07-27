@@ -1,5 +1,6 @@
 const { RESTDataSource } = require('apollo-datasource-rest')
-
+const { cancelaMatricula } = require('../../matricula/datasource/matricula')
+const cacelaMatricula = require('../../matricula/datasource/matricula').cancelaMatricula.bind(cancelaMatricula)
 class UsersAPI extends RESTDataSource {
   constructor(){
     super()
@@ -52,6 +53,21 @@ class UsersAPI extends RESTDataSource {
 
   async deletaUser(id) {
     await this.delete(`users/${id}`)
+    return this.respostaCustom
+  }
+
+  async mudaEstadoUser(id) {
+    const user = await this.getUserById(id)
+    if(user.ativo === false) {
+      this.respostaCustom.mensagem = "usuário já cancelado"
+      return this.respostaCustom
+    }
+    user.ativo = false
+    await this.put(`/users/${id}`, {
+      ...user
+    })
+    cacelaMatricula(id)
+    this.respostaCustom.mensagem = `Usuário de id ${id} cancelado`
     return this.respostaCustom
   }
 }

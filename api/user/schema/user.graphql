@@ -41,9 +41,15 @@ scalar DateTime
     adicionaUser(user: UserInput): User!
     atualizaUser(id: ID!, user: UserInput): atualizaUserResposta!
     deletaUser(id: ID!): deletaUserResposta!
+    mudaEstadoUser(id: ID!): mudaEstadoUserResposta!
   }
 
   interface respostaCustom {
+    code: Int!
+    mensagem: String!
+  }
+
+  type mudaEstadoUserResposta implements respostaCustom {
     code: Int!
     mensagem: String!
   }

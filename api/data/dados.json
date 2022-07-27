@@ -3,58 +3,82 @@
     {
       "id": 1,
       "nome": "Ana Torre",
-      "ativo": true,
+      "ativo": false,
       "email": "a@a.com",
-      "role": 1
+      "role": {
+        "id": 1,
+        "type": "ESTUDANTE"
+      }
     },
     {
       "id": 2,
       "nome": "Gabriel Costa",
-      "ativo": true,
+      "ativo": false,
       "email": "g@g.com",
-      "role": 1
+      "role": {
+        "id": 1,
+        "type": "ESTUDANTE"
+      }
     },
     {
       "id": 3,
       "nome": "Flavia Lins",
-      "ativo": true,
+      "ativo": false,
       "email": "f@f.com",
-      "role": 1
+      "role": {
+        "id": 1,
+        "type": "ESTUDANTE"
+      }
     },
     {
       "id": 4,
       "nome": "Carlos Marques",
-      "ativo": true,
+      "ativo": false,
       "email": "c@c.com",
-      "role": 2
+      "role": {
+        "id": 2,
+        "type": "DOCENTE"
+      }
     },
     {
       "id": 5,
       "nome": "Silvia Souza",
-      "ativo": true,
+      "ativo": false,
       "email": "s@s.com",
-      "role": 2
+      "role": {
+        "id": 2,
+        "type": "DOCENTE"
+      }
     },
     {
       "id": 6,
       "nome": "Marcia Silva",
-      "ativo": true,
+      "ativo": false,
       "email": "m@m.com",
-      "role": 2
+      "role": {
+        "id": 2,
+        "type": "DOCENTE"
+      }
     },
     {
       "nome": "Marina Souza",
-      "ativo": true,
+      "ativo": false,
       "email": "l@l.com.br",
-      "role": 2,
+      "role": {
+        "id": 2,
+        "type": "DOCENTE"
+      },
       "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 7
     },
     {
       "nome": "Marina Souza",
-      "ativo": true,
+      "ativo": false,
       "email": "l@l.com.br",
-      "role": 2,
+      "role": {
+        "id": 2,
+        "type": "DOCENTE"
+      },
       "createdAt": "2020-09-22T00:00:00.000Z",
       "id": 8
     },
