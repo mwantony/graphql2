@@ -2,7 +2,7 @@ const { ApolloServer } = require("apollo-server");
 const { mergeTypeDefs } = require("graphql-tools");
 const path = require("path");
 
-const { userSchema, userResolvers, UserAPI } = require("./user");
+const { userSchema, userResolvers, UsersAPI } = require("./user");
 
 const { turmaSchema, turmaResolvers, TurmasAPI } = require("./turma");
 
