@@ -1,17 +1,6 @@
-const turmas = [
-  {
-    id: 1,
-    descricao: "básico"
-  },
-  {
-    id: 2,
-    descricao: "intermediário"
-  },
-]
-
 const turmaResolvers = {
   Query: {
-    turmas: (root, args, context, info) => turmas
+    turmas: (root, args, {dataSources}, info) => dataSources.turmasAPI.getTurmas() 
   }
 }
 
