@@ -17,6 +17,10 @@ const turmaResolvers = {
     incluiTurma: (root, {turma}, {dataSources}) => dataSources.turmasAPI.incluiTurma(turma),
     atualizaTurma: (root, dados, {dataSources}) => dataSources.turmasAPI.atualizaTurma(dados),
     deletaTurma: (root, {id}, {dataSources}) => dataSources.turmasAPI.deletaTurma(id)
+  },
+
+  Turma: {
+    matriculas: (parent, args, {dataSource}) => dataSource.matriculasAPI.getMatriculasPorTurma(parent.id)
   }
 };
 
