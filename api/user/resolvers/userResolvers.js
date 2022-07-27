@@ -32,7 +32,7 @@ const userResolvers = {
     mudaEstadoUser: async (root, {id}, {dataSources}) => dataSources.usersAPI.mudaEstadoUser(id)
   },
   User: {
-    matriculas: (parent, args, {dataSources}) => dataSources.matriculasAPI.getMatriculasPorEstudante(parent.id)
+    matriculas: (parent, args, {dataSources}) => dataSources.matriculasAPI.matriculasLoader.load(parent.id)
   }
 }
 
