@@ -12,6 +12,13 @@ const matriculaResolvers = {
     matricularEstudante: (root, ids, { dataSources }) =>
       dataSources.matriculasAPI.matricularEstudante(ids),
   },
+
+  Matricula: {
+    estudante: (parent, args, { dataSources }) =>
+      dataSources.usersAPI.getUserById(parent.estudante_id),
+    turma: (parent, args, { dataSources }) =>
+      dataSources.turmasAPI.getTurma(parent.turma_id),
+  },
 };
 
 module.exports = matriculaResolvers;

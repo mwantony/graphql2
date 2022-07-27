@@ -14,14 +14,20 @@ const turmaResolvers = {
       dataSources.turmasAPI.getTurma(id),
   },
   Mutation: {
-    incluiTurma: (root, {turma}, {dataSources}) => dataSources.turmasAPI.incluiTurma(turma),
-    atualizaTurma: (root, dados, {dataSources}) => dataSources.turmasAPI.atualizaTurma(dados),
-    deletaTurma: (root, {id}, {dataSources}) => dataSources.turmasAPI.deletaTurma(id)
+    incluiTurma: (root, { turma }, { dataSources }) =>
+      dataSources.turmasAPI.incluiTurma(turma),
+    atualizaTurma: (root, dados, { dataSources }) =>
+      dataSources.turmasAPI.atualizaTurma(dados),
+    deletaTurma: (root, { id }, { dataSources }) =>
+      dataSources.turmasAPI.deletaTurma(id),
   },
 
   Turma: {
-    matriculas: (parent, args, {dataSource}) => dataSource.matriculasAPI.getMatriculasPorTurma(parent.id)
-  }
+    matriculas: (parent, args, { dataSources }) =>
+      dataSources.matriculasAPI.getMatriculasPorTurma(parent.id),
+    docente: (parent, args, { dataSources }) =>
+      dataSources.usersAPI.getUserById(parent.docente_id),
+  },
 };
 
 module.exports = turmaResolvers;
