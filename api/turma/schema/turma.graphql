@@ -19,4 +19,4 @@ const turmaSchema = gql `
     turma (id: ID!): Turma!
   }
 `
-module.exports turmaSchema
+module.exports = turmaSchema
